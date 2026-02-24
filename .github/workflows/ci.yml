@@ -1,7 +1,11 @@
 name: ci-frontend-workflow
-on: [push]
+on: 
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["develop"]
 jobs:
-  check-application:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
